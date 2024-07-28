@@ -14,7 +14,7 @@ const AppGradient = ({
 }: AppGradientProps) => {
     return (
         <LinearGradient colors={colors} className="flex-1">
-            <SafeAreaView className={`flex-1 p-2 ${containerStyles}`}>
+            <SafeAreaView className={`flex-1 px-4 ${containerStyles}`}>
                 {children}
             </SafeAreaView>
         </LinearGradient>

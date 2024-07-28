@@ -6,7 +6,7 @@ const NatureMeditate = () => {
     return (
         <View className="flex-1">
             <AppGradient colors={["#161b2e", "#0a4d4a", "#766e67"]}>
-                <View className="">
+                <View className="my-4">
                     <Text className="text-gray-200 font-bold text-4xl text-left">
                         Welcome <Text className="text-blue-500">{name}</Text>
                     </Text>

@@ -18,9 +18,9 @@ const App = () => {
             >
                 <AppGradient
                     colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}
-                    containerStyles="justify-between"
+                    containerStyles="justify-between py-4"
                 >
-                    <View className="mt-4">
+                    <View>
                         <Text className="text-white text-4xl text-center font-bold">
                             Meditation
                         </Text>
@@ -28,10 +28,10 @@ const App = () => {
                             Simplifying meditation for everyone
                         </Text>
                     </View>
-                    <View className="mb-4 items-center">
+                    <View className="tems-center">
                         <CustomButton
                             onPress={() => {
-                                router.push("/test");
+                                router.push("/nature-meditate");
                             }}
                             title="Get Started"
                             containerStyles=""
