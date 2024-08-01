@@ -1,17 +1,60 @@
-import { View, Text } from "react-native";
+import { View, Text, FlatList, Pressable, ImageBackground } from "react-native";
 import AppGradient from "@/components/AppGradient";
+import { StatusBar } from "expo-status-bar";
+import { MEDITATION_DATA } from "@/constants/MeditationData";
+import MEDITATION_IMAGES from "@/constants/meditation-images";
+import { LinearGradient } from "expo-linear-gradient";
 
 const NatureMeditate = () => {
-    const name = "Gabriel";
+    const name = "Gustavo";
     return (
         <View className="flex-1">
-            <AppGradient colors={["#161b2e", "#0a4d4a", "#766e67"]}>
-                <View className="my-4">
+            <AppGradient
+                colors={["#161b2e", "#0a4d4a", "#766e67"]}
+                containerStyles="mb-16"
+            >
+                <View className="flex gap-2 mb-2">
                     <Text className="text-gray-200 font-bold text-4xl text-left">
-                        Welcome <Text className="text-blue-500">{name}</Text>
+                        Welcome, <Text className="text-blue-500">{name}</Text>
+                    </Text>
+                    <Text className="text-indigo-100 text-xl font-medium">
+                        Start your meditation practice today
                     </Text>
                 </View>
+                <View>
+                    <FlatList
+                        data={MEDITATION_DATA}
+                        showsVerticalScrollIndicator={false}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => (
+                            <Pressable
+                                onPress={() => console.log("press")}
+                                className="h-48 my-4 rounded-lg overflow-hidden"
+                            >
+                                <ImageBackground
+                                    source={MEDITATION_IMAGES[item.id - 1]}
+                                    resizeMode="cover"
+                                    className="flex-1 justify-center"
+                                >
+                                    <LinearGradient
+                                        colors={[
+                                            "transparent",
+                                            "rgba(0,0,0,0.8)",
+                                        ]}
+                                        className="flex w-full h-full justify-center items-center"
+                                    >
+                                        <Text className="text-gray-100 text-3xl font-bold">
+                                            {item.title}
+                                        </Text>
+                                    </LinearGradient>
+                                </ImageBackground>
+                            </Pressable>
+                        )}
+                    />
+                </View>
             </AppGradient>
+
+            <StatusBar style="auto" />
         </View>
     );
 };

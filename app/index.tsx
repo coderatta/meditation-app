@@ -11,6 +11,7 @@ const App = () => {
     return (
         <View className="flex-1">
             <StatusBar style="auto" />
+
             <ImageBackground
                 source={backgroundImage}
                 resizeMode="cover"
