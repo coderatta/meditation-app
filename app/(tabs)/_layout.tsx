@@ -8,6 +8,9 @@ const TabLayout = () => {
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: Colors.primary,
+                tabBarLabelStyle: {
+                    fontFamily: "Roboto-Mono",
+                },
             }}
         >
             <Tabs.Screen

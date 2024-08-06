@@ -52,7 +52,8 @@ const AffirmationPractice = () => {
                         {sentences.map((sentence, id) => (
                             <Text
                                 key={id}
-                                className="text-white text-3xl text-center font-bold px-4"
+                                style={{ fontFamily: "Roboto-Mono" }}
+                                className="text-white text-3xl text-center px-4"
                             >
                                 {sentence}.
                             </Text>
